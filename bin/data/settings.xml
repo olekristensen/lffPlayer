@@ -1,0 +1,50 @@
+<settings>
+	<vSync>1</vSync>
+	<Hue_Offset>0.02</Hue_Offset>
+	<Hue_Saturation>0.29</Hue_Saturation>
+	<Light_0>
+		<number>0</number>
+		<position>148, 163</position>
+		<color>0.04, 0.0509804, 0.111373, 1</color>
+	</Light_0>
+	<Light_1>
+		<number>1</number>
+		<position>442, 580</position>
+		<color>0.857255, 0.734902, 0.145882, 1</color>
+	</Light_1>
+	<Light_2>
+		<number>2</number>
+		<position>419, 163</position>
+		<color>0.0501961, 0.0698039, 0.130196, 1</color>
+	</Light_2>
+	<Light_3>
+		<number>3</number>
+		<position>257, 589</position>
+		<color>0.993725, 0.852549, 0.338824, 1</color>
+	</Light_3>
+	<Light_4>
+		<number>4</number>
+		<position>692, 161</position>
+		<color>0.0462745, 0.0682353, 0.135686, 1</color>
+	</Light_4>
+	<Light_5>
+		<number>5</number>
+		<position>989, 158</position>
+		<color>0.0431373, 0.0627451, 0.12549, 1</color>
+	</Light_5>
+	<Light_6>
+		<number>6</number>
+		<position>1285, 138</position>
+		<color>0.0305882, 0.0509804, 0.105098, 1</color>
+	</Light_6>
+	<Light_7>
+		<number>7</number>
+		<position>1542, 185</position>
+		<color>0.0211765, 0.0368627, 0.0956863, 1</color>
+	</Light_7>
+	<Light_8>
+		<number>8</number>
+		<position>1734, 209</position>
+		<color>0.0164706, 0.0282353, 0.0909804, 1</color>
+	</Light_8>
+</settings>
