@@ -23,9 +23,9 @@ VideoReference::VideoReference( std::string p )
     date.tm_hour = 0;
     date.tm_min = 0;
     date.tm_sec = 0;
-    date.tm_year = ofToInt(file.getFileName().substr(0,4))- 1900;
-    date.tm_mon = ofToInt(file.getFileName().substr(5,2))-1;
-    date.tm_mday = ofToInt(file.getFileName().substr(8,2));
+    date.tm_year = ofToInt(ofFilePath::getFileName(p).substr(0,4))- 1900;
+    date.tm_mon = ofToInt(ofFilePath::getFileName(p).substr(5,2))-1;
+    date.tm_mday = ofToInt(ofFilePath::getFileName(p).substr(8,2));
     
     mktime ( &date );
 }

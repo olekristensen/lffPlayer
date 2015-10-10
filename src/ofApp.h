@@ -2,8 +2,9 @@
 
 #include "ofMain.h"
 #include "VideoReference.h"
-#include "ofxPhilipsHue.h"
-#include "hueLight.h"
+//#include "ofxPhilipsHue.h"
+//#include "hueLight.h"
+#include "ofxAudioUnit.h"
 
 #define HOST "localhost"
 #define PORT 12345
@@ -30,9 +31,10 @@ class ofApp : public ofBaseApp{
 
         void setupVideoReferences(string videoFolder);
     
-        void vSyncChanged(bool & vSync);
-        void hueOffsetChanged(float & hueOffset);
-        void hueSaturationChanged(float & hueSaturation);
+    void vSyncChanged(bool & vSync);
+    void useShaderChanged(bool & useShader);
+//        void hueOffsetChanged(float & hueOffset);
+//        void hueSaturationChanged(float & hueSaturation);
 
         void preloadNextVideo();
     
@@ -51,7 +53,7 @@ class ofApp : public ofBaseApp{
     
         ofXml finalCutXML;
         string loadTagsForVideoReference(VideoReference * vRef);
-    string currentTagsForVideoReference(VideoReference * vRef, ofVideoPlayer * p);
+        string currentTagsForVideoReference(VideoReference * vRef, ofVideoPlayer * p);
 
         ofBuffer rawFrameListBuffer;
 
@@ -66,11 +68,11 @@ class ofApp : public ofBaseApp{
         ofShader shader;
         ofPlanePrimitive plane;
     
-        ofxPhilipsHue hue;
-        double lastHueUpdateSeconds;
-        vector<hueLight> hueLights;
-        bool setupDone;
-        int draggingHueLight;
+//        ofxPhilipsHue hue;
+//        double lastHueUpdateSeconds;
+//        vector<hueLight> hueLights;
+        bool setupDone = false;
+//        int draggingHueLight;
     
 //        ofxOscParameterSync sync;
     
@@ -81,15 +83,21 @@ class ofApp : public ofBaseApp{
     ofParameter<int> currentHour;
     ofParameter<int> currentMinute;
     ofParameter<int> currentSecond;
-    ofParameter<float> hueOffset;
-    ofParameter<float> hueSaturation;
+//    ofParameter<float> hueOffset;
+//    ofParameter<float> hueSaturation;
     ofParameter<string> videoFolder;
     ofParameter<bool> vSync;
+    ofParameter<bool> useShader;
     ofParameter<bool> showOSD;
     
     ofXml settings;
 
         ofxPanel gui;
+
+    ofxAudioUnitFilePlayer filePlayerLeft;
+    ofxAudioUnitFilePlayer filePlayerRight;
+    ofxAudioUnitOutput output;
+    ofxAudioUnitMixer mixer;
 
     
 };
