@@ -18,7 +18,7 @@ VideoReference::VideoReference()
 VideoReference::VideoReference( std::string p )
 {
     path = p;
-    file = ofFile(path);
+    file = ofFile(path, ofFile::Reference);
     
     date.tm_hour = 0;
     date.tm_min = 0;
