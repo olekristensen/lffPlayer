@@ -2,8 +2,6 @@
 
 #include "ofMain.h"
 #include "VideoReference.h"
-//#include "ofxPhilipsHue.h"
-//#include "hueLight.h"
 #include "ofxAudioUnit.h"
 
 #define HOST "localhost"
@@ -32,9 +30,6 @@ class ofApp : public ofBaseApp{
         void setupVideoReferences(string videoFolder);
     
     void vSyncChanged(bool & vSync);
-    void useShaderChanged(bool & useShader);
-//        void hueOffsetChanged(float & hueOffset);
-//        void hueSaturationChanged(float & hueSaturation);
 
         void preloadNextVideo();
     
@@ -59,22 +54,16 @@ class ofApp : public ofBaseApp{
 
         string message;
     
-        bool videoPlayerNextReady;
-        Poco::Timestamp lastFragTimestamp, lastVertTimestamp;
-    
-        float finalCutTimeToFloat(string t);
+        bool videoPlayerNextReadyForPreloading;
+
+    float finalCutTimeToFloat(string t);
         
         ofTexture texture;
         ofShader shader;
         ofPlanePrimitive plane;
     
-//        ofxPhilipsHue hue;
-//        double lastHueUpdateSeconds;
-//        vector<hueLight> hueLights;
         bool setupDone = false;
-//        int draggingHueLight;
-    
-//        ofxOscParameterSync sync;
+    bool firstVideoLoaded = false;
     
     ofParameterGroup parameters;
     ofParameter<int> currentYear;
@@ -83,11 +72,8 @@ class ofApp : public ofBaseApp{
     ofParameter<int> currentHour;
     ofParameter<int> currentMinute;
     ofParameter<int> currentSecond;
-//    ofParameter<float> hueOffset;
-//    ofParameter<float> hueSaturation;
     ofParameter<string> videoFolder;
     ofParameter<bool> vSync;
-    ofParameter<bool> useShader;
     ofParameter<bool> showOSD;
     
     ofXml settings;
